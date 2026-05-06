@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&family=Kanit:wght@400;500;600;700&display=swap');
+
+:root {
+  --brand-blue: #50c2c0;
+  --brand-blue-deep: #1a8586;
+  --brand-orange: #fec566;
+  --brand-orange-deep: #d78600;
+  --ink-900: #414141;
+  --ink-800: #555555;
+  --ink-700: #666666;
+  --ink-500: #8e8e8e;
+  --surface: rgba(255, 255, 255, 0.88);
+  --canvas: #fffdf8;
+  --font-heading: 'Kanit', 'Segoe UI', sans-serif;
+  --font-body: 'Bai Jamjuree', 'Segoe UI', sans-serif;
+  --shadow-soft:
+    0 18px 40px rgba(80, 194, 192, 0.08), 0 10px 24px rgba(65, 65, 65, 0.06);
+
+  color: var(--ink-800);
+  background:
+    radial-gradient(circle at top left, rgba(80, 194, 192, 0.14), transparent 36%),
+    radial-gradient(circle at top right, rgba(254, 197, 102, 0.18), transparent 32%),
+    linear-gradient(180deg, #fffefa 0%, #fffefc 45%, #fffaf1 100%);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+body,
+button,
+a {
+  font-family: var(--font-body);
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--ink-900);
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
