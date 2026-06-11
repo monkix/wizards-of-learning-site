@@ -1,16 +1,44 @@
-# React + Vite
+# Wizards of Learning Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page prototype for Wizards of Learning built with React, Vite, and Framer Motion.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+## Google Sheet-driven content flow
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This repo supports a simple Google Sheet workflow for a static site:
 
-## Expanding the ESLint configuration
+1. Edit the content in one Google Sheet.
+2. Pull the content into [src/siteContent.js](./src/siteContent.js) with a script.
+3. Build and deploy the static site as usual.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Setup
+
+1. Create a Google Sheet from [GOOGLE_SHEET_TEMPLATE.csv](./GOOGLE_SHEET_TEMPLATE.csv).
+2. Publish the content tab as CSV or use its export URL.
+3. Copy `.env.example` to `.env.local`.
+4. Put your `GOOGLE_SHEET_CSV_URL` into `.env.local`.
+
+### Pull content from Google Sheet
+
+```bash
+npm run sheet:pull
+```
+
+After that, rebuild or redeploy:
+
+```bash
+npm run build
+npm run deploy
+```
+
+## Deploy
+
+```bash
+npm run deploy
+```

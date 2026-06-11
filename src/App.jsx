@@ -1,74 +1,13 @@
 import { startTransition, useState } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import './App.css'
-
-const highlights = [
-  {
-    title: 'ออกแบบบอร์ดเกมและสื่อการเรียนรู้',
-    body:
-      'วางเว็บไซต์ให้สะท้อนบทบาทหลักของ WoL ในฐานะทีมที่ออกแบบประสบการณ์การเรียนรู้ผ่านการเล่นอย่างเป็นระบบ',
-  },
-  {
-    title: 'เชื่อมการเล่นกับผลลัพธ์การเรียนรู้',
-    body:
-      'ใช้ภาษาที่พาให้เห็นว่าเกมไม่ใช่แค่กิจกรรมสนุก แต่เป็นเครื่องมือสื่อสาร ทดลอง และสะท้อนความคิดได้จริง',
-  },
-  {
-    title: 'เล่าเรื่องแบบอบอุ่น ชัด และชวนลงมือ',
-    body:
-      'คุมโทนให้เป็นมิตร อ่านง่าย และไม่แข็งแบบองค์กร เพื่อให้ทั้งครู ทีมพัฒนา และพาร์ตเนอร์เข้าถึงได้',
-  },
-]
-
-const featuredWork = [
-  {
-    title: 'Wishlist',
-    tag: 'Financial Learning',
-    body:
-      'หยิบโครงการบอร์ดเกมการเงินที่ WoL ทำร่วมกับพาร์ตเนอร์มาเป็นตัวอย่างของการเรียนรู้ที่จับต้องได้และขยายผลได้จริง',
-  },
-  {
-    title: 'Play & Learn',
-    tag: 'Social Impact',
-    body:
-      'สื่อสารมุมที่ WoL ทำงานเชิงสังคมและการกระจายโอกาสการเรียนรู้ ผ่านโปรเจกต์ที่พาเกมไปถึงโรงเรียนและชุมชน',
-  },
-  {
-    title: 'Podcast & Community',
-    tag: 'Knowledge Sharing',
-    body:
-      'แสดงมิติของ WoL ที่ไม่ได้แค่ผลิตเกม แต่ยังแบ่งปันความรู้เรื่อง gamification, learning design และวัฒนธรรมการเล่น',
-  },
-]
-
-const processSteps = [
-  {
-    step: '01',
-    title: 'Frame the Gap',
-    body: 'เริ่มจากปัญหาการเรียนรู้จริง ว่าอยากให้ผู้เล่นเข้าใจ รู้สึก หรือกล้าลองอะไรเพิ่มขึ้น',
-  },
-  {
-    step: '02',
-    title: 'Build the Adventure',
-    body: 'แปลงโจทย์ให้เป็นประสบการณ์ที่ชวนเล่น มีอารมณ์ มีภารกิจ และทำให้คนอยากมีส่วนร่วม',
-  },
-  {
-    step: '03',
-    title: 'Shape the Mechanic',
-    body: 'ออกแบบระบบการตัดสินใจ ฟีดแบ็ก และข้อจำกัดให้ความสนุกทำงานไปพร้อมกับการเรียนรู้',
-  },
-  {
-    step: '04',
-    title: 'Facilitate & Reflect',
-    body: 'ปิดท้ายด้วยการใช้งานจริง เวิร์กช็อป และการสะท้อนผล เพื่อให้เกมพาไปสู่การเปลี่ยนแปลงที่วัดได้',
-  },
-]
+import { siteContent } from './siteContent'
 
 const floatingPieces = [
-  { label: 'Gap', className: 'piece piece-gap' },
-  { label: 'Adventure', className: 'piece piece-adventure' },
-  { label: 'Mechanic', className: 'piece piece-mechanic' },
-  { label: 'Element', className: 'piece piece-element' },
+  { label: 'โจทย์', className: 'piece piece-gap' },
+  { label: 'ประสบการณ์', className: 'piece piece-adventure' },
+  { label: 'กลไก', className: 'piece piece-mechanic' },
+  { label: 'การสะท้อน', className: 'piece piece-element' },
 ]
 
 function SectionTitle({ eyebrow, title, body }) {
@@ -110,43 +49,52 @@ function App() {
     <div className="page-shell">
       <header className="topbar">
         <a className="brand" href="#top">
-          <span className="brand-mark">WoL</span>
+          <span className="brand-mark">
+            <img src={siteContent.brand.logo} alt="Wizards of Learning logo" />
+          </span>
           <span className="brand-copy">
-            <strong>Wizards of Learning</strong>
-            <small>playful learning studio</small>
+            <strong>{siteContent.brand.title}</strong>
+            <small>{siteContent.brand.subtitle}</small>
           </span>
         </a>
         <nav className="nav">
-          <a href="#about">About</a>
-          <a href="#work">Work</a>
-          <a href="#process">Process</a>
-          <a href="#contact">Contact</a>
+          {siteContent.nav.map((item) => (
+            <a key={item.href} href={item.href}>
+              {item.label}
+            </a>
+          ))}
         </nav>
       </header>
 
       <main id="top">
         <section className="hero-section">
           <div className="hero-copy">
-            <p className="hero-kicker">เว็บไซต์ต้นแบบด้วย React 19 + Vite 8</p>
-            <h1>เปลี่ยนการเรียนรู้ให้ขยับได้ เหมือนประสบการณ์การเล่นที่ดี</h1>
-            <p className="hero-body">
-              หน้าเว็บนี้ออกแบบจากข้อมูลสาธารณะของ Wizards of Learning และตีความผ่านกรอบ
-              WoL เพื่อสื่อว่าเกมสามารถเป็นทั้งสื่อเรียนรู้ เครื่องมือสนทนา และจุดเริ่มต้นของการลงมือทำได้จริง
-            </p>
+            <p className="hero-kicker">{siteContent.hero.kicker}</p>
+            <h1>{siteContent.hero.title}</h1>
+            <p className="hero-body">{siteContent.hero.body}</p>
 
             <div className="hero-actions">
-              <a className="primary-action" href="#work">
-                ดูตัวอย่างงาน
+              <a className="primary-action" href={siteContent.hero.primaryAction.href}>
+                {siteContent.hero.primaryAction.label}
               </a>
-              <a className="secondary-action" href="#process">
-                วิธีคิดของ WoL
+              <a className="secondary-action" href={siteContent.hero.secondaryAction.href}>
+                {siteContent.hero.secondaryAction.label}
               </a>
             </div>
 
             <div className="hero-pillars" aria-label="Core themes">
-              <span>Board Game Design</span>
-              <span>Learning Experience</span>
-              <span>Facilitation</span>
+              {siteContent.hero.pillars.map((pillar) => (
+                <span key={pillar}>{pillar}</span>
+              ))}
+            </div>
+
+            <div className="hero-trust-grid">
+              {siteContent.hero.trustSignals.map((signal) => (
+                <article key={signal.title} className="hero-trust-card">
+                  <h3>{signal.title}</h3>
+                  <p>{signal.body}</p>
+                </article>
+              ))}
             </div>
           </div>
 
@@ -173,8 +121,8 @@ function App() {
                 }
                 transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
               >
-                <p>Design for how people learn</p>
-                <strong>Playful systems that teach, reveal, and invite action.</strong>
+                <p>การเรียนรู้ที่ออกแบบมาอย่างตั้งใจ</p>
+                <strong>ทั้งสนุก ชัดเจน และพร้อมใช้งานในบริบทจริงขององค์กร</strong>
               </motion.div>
 
               <motion.div
@@ -186,12 +134,12 @@ function App() {
                 }
                 transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
               >
-                <span>WoL Flow</span>
+                <span>แนวทาง WoL</span>
                 <ul>
-                  <li>Gap</li>
-                  <li>Adventure</li>
-                  <li>Mechanic</li>
-                  <li>Element</li>
+                  <li>ตั้งโจทย์</li>
+                  <li>ออกแบบประสบการณ์</li>
+                  <li>วางกลไกการเรียนรู้</li>
+                  <li>ชวนสะท้อนและต่อยอด</li>
                 </ul>
               </motion.div>
 
@@ -240,7 +188,7 @@ function App() {
         </section>
 
         <section className="insight-strip" id="about">
-          {highlights.map((item) => (
+          {siteContent.highlights.map((item) => (
             <article key={item.title} className="insight-card">
               <h3>{item.title}</h3>
               <p>{item.body}</p>
@@ -250,40 +198,47 @@ function App() {
 
         <section className="content-section">
           <SectionTitle
-            eyebrow="What This Website Is Saying"
-            title="ภาพรวมที่ควรปรากฏบนเว็บของ WoL"
-            body="ใช้การเล่าเรื่องที่ทำให้คนเห็น WoL เป็นทั้งทีมออกแบบเกม ทีมคิดการเรียนรู้ และผู้ประสานบทสนทนาที่ทำให้การเรียนรู้รู้สึกเป็นเรื่องชวนเข้าใกล้"
+            eyebrow={siteContent.summary.eyebrow}
+            title={siteContent.summary.title}
+            body={siteContent.summary.body}
           />
 
           <div className="summary-grid">
-            <article className="summary-panel">
-              <p className="summary-label">Brand Reading</p>
-              <h3>สดใส เป็นมิตร และไม่เด็กเกินไป</h3>
-              <p>
-                สีหลักยึดฟ้าและส้มของ WoL พร้อมพื้นหลังสว่างและพื้นที่หายใจเยอะ เพื่อให้เว็บดูเปิดรับคนเข้ามาสำรวจ ไม่กดดันเหมือนหน้าองค์กรแบบเดิม
-              </p>
-            </article>
+            {siteContent.summary.panels.map((panel) => (
+              <article key={panel.title} className="summary-panel">
+                <p className="summary-label">{panel.label}</p>
+                <h3>{panel.title}</h3>
+                <p>{panel.body}</p>
+              </article>
+            ))}
+          </div>
+        </section>
 
-            <article className="summary-panel">
-              <p className="summary-label">Interaction Choice</p>
-              <h3>3D motion แบบเบา เพื่อทำให้แนวคิด “การเล่น” รู้สึกจับต้องได้</h3>
-              <p>
-                ใช้ scene แบบ layered card, token และ die ที่ขยับตามเมาส์ แทนการใส่ three.js หนัก
-                ๆ เพื่อให้ยังคงความลื่นและเหมาะกับ landing page
-              </p>
-            </article>
+        <section className="content-section partners-section">
+          <SectionTitle
+            eyebrow={siteContent.partnersSection.eyebrow}
+            title={siteContent.partnersSection.title}
+            body={siteContent.partnersSection.body}
+          />
+
+          <div className="partner-wall" aria-label="Organizations WoL has worked with">
+            {siteContent.partnersSection.items.map((partner) => (
+              <article key={partner.name} className="partner-logo-card">
+                <img src={partner.logo} alt={partner.name} loading="lazy" />
+              </article>
+            ))}
           </div>
         </section>
 
         <section className="content-section featured-section" id="work">
           <SectionTitle
-            eyebrow="Featured Threads"
-            title="ตัวอย่างสิ่งที่เว็บไซต์นี้สามารถหยิบมาเล่า"
-            body="คัดหัวข้อจากข้อมูลสาธารณะที่สะท้อนทั้งงานเชิงพาณิชย์ งานเพื่อสังคม และการแบ่งปันองค์ความรู้ของ Wizards of Learning"
+            eyebrow={siteContent.featuredSection.eyebrow}
+            title={siteContent.featuredSection.title}
+            body={siteContent.featuredSection.body}
           />
 
           <div className="featured-grid">
-            {featuredWork.map((item) => (
+            {siteContent.featuredSection.items.map((item) => (
               <article key={item.title} className="feature-card">
                 <p className="feature-tag">{item.tag}</p>
                 <h3>{item.title}</h3>
@@ -293,15 +248,59 @@ function App() {
           </div>
         </section>
 
+        <section className="content-section case-studies-section">
+          <SectionTitle
+            eyebrow={siteContent.caseStudiesSection.eyebrow}
+            title={siteContent.caseStudiesSection.title}
+            body={siteContent.caseStudiesSection.body}
+          />
+
+          <div className="case-study-grid">
+            {siteContent.caseStudiesSection.items.map((item) => (
+              <article key={`${item.year}-${item.title}`} className="case-study-card">
+                <div className="case-study-meta">
+                  <span>{item.year}</span>
+                  <span>{item.type}</span>
+                </div>
+                <h3>{item.title}</h3>
+                <p className="case-study-client">ลูกค้า: {item.client}</p>
+                <p>{item.summary}</p>
+                <p className="case-study-outcome">{item.outcome}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="content-section proof-section">
+          <SectionTitle
+            eyebrow={siteContent.proofSection.eyebrow}
+            title={siteContent.proofSection.title}
+            body={siteContent.proofSection.body}
+          />
+
+          <div className="proof-grid">
+            {siteContent.proofSection.items.map((item) => (
+              <article key={item.sourceUrl} className="proof-card">
+                <p className="summary-label">{item.sourceLabel}</p>
+                <h3>{item.headline}</h3>
+                <p>{item.summary}</p>
+                <a className="proof-link" href={item.sourceUrl} target="_blank" rel="noreferrer">
+                  ดูแหล่งอ้างอิง
+                </a>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="content-section process-section" id="process">
           <SectionTitle
-            eyebrow="Inspired by WoL Framework Thinking"
-            title="แปลงกรอบคิด WoL ให้เป็นภาษาบนหน้าเว็บ"
-            body="อ้างอิงวิธีคิดจากสกิล WoL ที่เน้นเริ่มจาก learning gap แล้วค่อยพาไปสู่ประสบการณ์ กลไก และผลลัพธ์ที่ผู้เล่นสะท้อนกลับได้"
+            eyebrow={siteContent.processSection.eyebrow}
+            title={siteContent.processSection.title}
+            body={siteContent.processSection.body}
           />
 
           <div className="process-grid">
-            {processSteps.map((item) => (
+            {siteContent.processSection.items.map((item) => (
               <article key={item.step} className="process-card">
                 <span className="process-step">{item.step}</span>
                 <h3>{item.title}</h3>
@@ -314,17 +313,39 @@ function App() {
         <section className="cta-section" id="contact">
           <div className="cta-card">
             <div>
-              <p className="eyebrow">Next Move</p>
-              <h2>พร้อมต่อยอดเป็นเว็บจริงได้ทันที</h2>
-              <p className="section-copy">
-                โปรเจกต์นี้ตั้งต้นด้วย Vite รุ่นล่าสุดในเครื่องของคุณ และวางโครงไว้สำหรับแตก
-                component, เพิ่ม CMS, หรือเชื่อมฟอร์มติดต่อในขั้นถัดไป
-              </p>
+              <p className="eyebrow">{siteContent.cta.eyebrow}</p>
+              <h2>{siteContent.cta.title}</h2>
+              <p className="section-copy">{siteContent.cta.body}</p>
             </div>
             <div className="cta-meta">
-              <span>Vite 8</span>
-              <span>React 19</span>
-              <span>Framer Motion</span>
+              {siteContent.cta.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
+            <div className="cta-actions">
+              <a className="primary-action" href={siteContent.cta.primaryAction.href}>
+                {siteContent.cta.primaryAction.label}
+              </a>
+              <a className="secondary-action" href={siteContent.cta.secondaryAction.href}>
+                {siteContent.cta.secondaryAction.label}
+              </a>
+            </div>
+          </div>
+
+          <div className="contact-panel">
+            <SectionTitle
+              eyebrow={siteContent.contactSection.eyebrow}
+              title={siteContent.contactSection.title}
+              body={siteContent.contactSection.body}
+            />
+
+            <div className="contact-grid">
+              {siteContent.contactSection.items.map((item) => (
+                <a key={item.label} className="contact-card" href={item.href}>
+                  <p className="summary-label">{item.label}</p>
+                  <strong>{item.value}</strong>
+                </a>
+              ))}
             </div>
           </div>
         </section>

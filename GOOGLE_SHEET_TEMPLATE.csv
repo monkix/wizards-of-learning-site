@@ -1,0 +1,61 @@
+section,item,key,value
+meta,,brandTitle,Wizards of Learning
+meta,,brandSubtitle,playful learning studio
+meta,,navAbout,About
+meta,,navWork,Work
+meta,,navProcess,Process
+meta,,navContact,Contact
+hero,,kicker,เว็บไซต์ต้นแบบด้วย React 19 + Vite 8
+hero,,title,เปลี่ยนการเรียนรู้ให้ขยับได้ เหมือนประสบการณ์การเล่นที่ดี
+hero,,body,หน้าเว็บนี้ออกแบบจากข้อมูลสาธารณะของ Wizards of Learning และตีความผ่านกรอบ WoL เพื่อสื่อว่าเกมสามารถเป็นทั้งสื่อเรียนรู้ เครื่องมือสนทนา และจุดเริ่มต้นของการลงมือทำได้จริง
+hero,,primaryActionLabel,ดูตัวอย่างงาน
+hero,,primaryActionHref,#work
+hero,,secondaryActionLabel,วิธีคิดของ WoL
+hero,,secondaryActionHref,#process
+hero,,pillars,Board Game Design | Learning Experience | Facilitation
+highlights,1,title,ออกแบบบอร์ดเกมและสื่อการเรียนรู้
+highlights,1,body,วางเว็บไซต์ให้สะท้อนบทบาทหลักของ WoL ในฐานะทีมที่ออกแบบประสบการณ์การเรียนรู้ผ่านการเล่นอย่างเป็นระบบ
+highlights,2,title,เชื่อมการเล่นกับผลลัพธ์การเรียนรู้
+highlights,2,body,ใช้ภาษาที่พาให้เห็นว่าเกมไม่ใช่แค่กิจกรรมสนุก แต่เป็นเครื่องมือสื่อสาร ทดลอง และสะท้อนความคิดได้จริง
+highlights,3,title,เล่าเรื่องแบบอบอุ่น ชัด และชวนลงมือ
+highlights,3,body,คุมโทนให้เป็นมิตร อ่านง่าย และไม่แข็งแบบองค์กร เพื่อให้ทั้งครู ทีมพัฒนา และพาร์ตเนอร์เข้าถึงได้
+summary,,eyebrow,What This Website Is Saying
+summary,,title,ภาพรวมที่ควรปรากฏบนเว็บของ WoL
+summary,,body,ใช้การเล่าเรื่องที่ทำให้คนเห็น WoL เป็นทั้งทีมออกแบบเกม ทีมคิดการเรียนรู้ และผู้ประสานบทสนทนาที่ทำให้การเรียนรู้รู้สึกเป็นเรื่องชวนเข้าใกล้
+summary,,featuredEyebrow,Featured Threads
+summary,,featuredTitle,ตัวอย่างสิ่งที่เว็บไซต์นี้สามารถหยิบมาเล่า
+summary,,featuredBody,คัดหัวข้อจากข้อมูลสาธารณะที่สะท้อนทั้งงานเชิงพาณิชย์ งานเพื่อสังคม และการแบ่งปันองค์ความรู้ของ Wizards of Learning
+summary,,processEyebrow,Inspired by WoL Framework Thinking
+summary,,processTitle,แปลงกรอบคิด WoL ให้เป็นภาษาบนหน้าเว็บ
+summary,,processBody,อ้างอิงวิธีคิดจากสกิล WoL ที่เน้นเริ่มจาก learning gap แล้วค่อยพาไปสู่ประสบการณ์ กลไก และผลลัพธ์ที่ผู้เล่นสะท้อนกลับได้
+summaryPanels,1,label,Brand Reading
+summaryPanels,1,title,สดใส เป็นมิตร และไม่เด็กเกินไป
+summaryPanels,1,body,สีหลักยึดฟ้าและส้มของ WoL พร้อมพื้นหลังสว่างและพื้นที่หายใจเยอะ เพื่อให้เว็บดูเปิดรับคนเข้ามาสำรวจ ไม่กดดันเหมือนหน้าองค์กรแบบเดิม
+summaryPanels,2,label,Interaction Choice
+summaryPanels,2,title,3D motion แบบเบา เพื่อทำให้แนวคิด “การเล่น” รู้สึกจับต้องได้
+summaryPanels,2,body,ใช้ scene แบบ layered card token และ die ที่ขยับตามเมาส์ แทนการใส่ three.js หนัก ๆ เพื่อให้ยังคงความลื่นและเหมาะกับ landing page
+featuredItems,1,tag,Financial Learning
+featuredItems,1,title,Wishlist
+featuredItems,1,body,หยิบโครงการบอร์ดเกมการเงินที่ WoL ทำร่วมกับพาร์ตเนอร์มาเป็นตัวอย่างของการเรียนรู้ที่จับต้องได้และขยายผลได้จริง
+featuredItems,2,tag,Social Impact
+featuredItems,2,title,Play & Learn
+featuredItems,2,body,สื่อสารมุมที่ WoL ทำงานเชิงสังคมและการกระจายโอกาสการเรียนรู้ ผ่านโปรเจกต์ที่พาเกมไปถึงโรงเรียนและชุมชน
+featuredItems,3,tag,Knowledge Sharing
+featuredItems,3,title,Podcast & Community
+featuredItems,3,body,แสดงมิติของ WoL ที่ไม่ได้แค่ผลิตเกม แต่ยังแบ่งปันความรู้เรื่อง gamification learning design และวัฒนธรรมการเล่น
+processItems,1,step,01
+processItems,1,title,Frame the Gap
+processItems,1,body,เริ่มจากปัญหาการเรียนรู้จริง ว่าอยากให้ผู้เล่นเข้าใจ รู้สึก หรือกล้าลองอะไรเพิ่มขึ้น
+processItems,2,step,02
+processItems,2,title,Build the Adventure
+processItems,2,body,แปลงโจทย์ให้เป็นประสบการณ์ที่ชวนเล่น มีอารมณ์ มีภารกิจ และทำให้คนอยากมีส่วนร่วม
+processItems,3,step,03
+processItems,3,title,Shape the Mechanic
+processItems,3,body,ออกแบบระบบการตัดสินใจ ฟีดแบ็ก และข้อจำกัดให้ความสนุกทำงานไปพร้อมกับการเรียนรู้
+processItems,4,step,04
+processItems,4,title,Facilitate & Reflect
+processItems,4,body,ปิดท้ายด้วยการใช้งานจริง เวิร์กช็อป และการสะท้อนผล เพื่อให้เกมพาไปสู่การเปลี่ยนแปลงที่วัดได้
+cta,,eyebrow,Next Move
+cta,,title,พร้อมต่อยอดเป็นเว็บจริงได้ทันที
+cta,,body,โปรเจกต์นี้ตั้งต้นด้วย Vite รุ่นล่าสุดในเครื่องของคุณ และวางโครงไว้สำหรับแตก component เพิ่ม CMS หรือเชื่อมฟอร์มติดต่อในขั้นถัดไป
+cta,,tags,Vite 8 | React 19 | Framer Motion
